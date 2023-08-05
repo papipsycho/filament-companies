@@ -12,10 +12,11 @@ use Livewire\Component;
 use Livewire\Redirector;
 use Livewire\WithFileUploads;
 use Wallo\FilamentCompanies\Pages\User\Profile;
+use Wallo\FilamentCompanies\Concerns\HasName;
 
 class UpdateProfileInformationForm extends Component
 {
-    use WithFileUploads;
+    use WithFileUploads, HasName;
 
     /**
      * The component's state.

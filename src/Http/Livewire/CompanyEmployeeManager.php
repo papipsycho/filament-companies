@@ -19,10 +19,11 @@ use Wallo\FilamentCompanies\Features;
 use Wallo\FilamentCompanies\FilamentCompanies;
 use Wallo\FilamentCompanies\RedirectsActions;
 use Wallo\FilamentCompanies\Role;
+use Wallo\FilamentCompanies\Concerns\HasName;
 
 class CompanyEmployeeManager extends Component
 {
-    use RedirectsActions;
+    use RedirectsActions, HasName;
 
     /**
      * The company instance.
