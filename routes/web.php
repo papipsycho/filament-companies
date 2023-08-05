@@ -41,7 +41,7 @@ Route::group(['middleware' => config('filament-companies.middleware', ['web'])],
                 Route::group(['middleware' => 'verified'], static function () {
                     // API...
                     if (FilamentCompanies::hasApiFeatures()) {
-                        Route::get('/user/api-tokens', APITokens::class);
+                        Route::get('/user/api-tokens', APITokens::class)->name('filament.admin.pages.user.api-tokens');
                     }
 
                     // Companies...
