@@ -36,7 +36,7 @@ Route::group(['middleware' => config('filament-companies.middleware', ['web'])],
         // User & Profile...
         Route::prefix(config('filament.path'))
             ->group(static function () {
-                Route::get('/user/profile', Profile::class);
+                Route::get('/user/profile', Profile::class)->name('filament.admin.pages.user.profile');
 
                 Route::group(['middleware' => 'verified'], static function () {
                     // API...

@@ -27,15 +27,11 @@ use Filament\Panel;
 
 class FilamentCompaniesServiceProvider extends ServiceProvider
 {
-    public function getId(): string
-    {
-        return 'filament-companies';
-    }
 
     /**
      * Register any application services.
      */
-    public function register(Panel $panel): void
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/filament-companies.php', 'filament-companies');
 
@@ -64,7 +60,7 @@ class FilamentCompaniesServiceProvider extends ServiceProvider
         /*$this->app->resolving('filament', function (FilamentManager $filament) {
             $filament->pages($this->getPages());
         });*/
-        $panel->pages($this->getPages());
+        //$panel->pages($this->getPages());
     }
 
     /**
@@ -80,6 +76,8 @@ class FilamentCompaniesServiceProvider extends ServiceProvider
             Livewire::component(app($page)->getName(), $page);
         }
 
+
+        $panel->pages($this->getPages());//JR don't know if is OK or not will check later todo
         Fortify::viewPrefix('filament-companies::auth.');
 
         // $this->configureComponents();
