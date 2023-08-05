@@ -23,13 +23,19 @@ use Wallo\FilamentCompanies\Pages\Companies\CompanySettings;
 use Wallo\FilamentCompanies\Pages\Companies\CreateCompany;
 use Wallo\FilamentCompanies\Pages\User\APITokens;
 use Wallo\FilamentCompanies\Pages\User\Profile;
+use Filament\Panel;
 
 class FilamentCompaniesServiceProvider extends ServiceProvider
 {
+    public function getId(): string
+    {
+        return 'filament-companies';
+    }
+
     /**
      * Register any application services.
      */
-    public function register(): void
+    public function register(Panel $panel): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/filament-companies.php', 'filament-companies');
 
@@ -55,15 +61,16 @@ class FilamentCompaniesServiceProvider extends ServiceProvider
             }
         });
 
-        $this->app->resolving('filament', function (FilamentManager $filament) {
+        /*$this->app->resolving('filament', function (FilamentManager $filament) {
             $filament->pages($this->getPages());
-        });
+        });*/
+        $panel->pages($this->getPages());
     }
 
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot(Panel $panel): void
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'filament-companies');
 
