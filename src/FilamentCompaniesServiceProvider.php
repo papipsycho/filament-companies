@@ -70,7 +70,7 @@ class FilamentCompaniesServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__.'/../lang', 'filament-companies');
 
         foreach ($this->getPages() as $page) {
-            Livewire::component(app($page)::getName(), $page);
+            Livewire::component(app($page)->getName(), $page);
         }
 
         Fortify::viewPrefix('filament-companies::auth.');

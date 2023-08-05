@@ -46,7 +46,7 @@ class APITokens extends Page implements Tables\Contracts\HasTable
         return __('filament-companies::default.grid_section_titles.create_api_token');
     }
 
-    protected function getSubHeading(): string
+    public function getSubHeading(): string
     {
         return __('filament-companies::default.grid_section_descriptions.create_api_token');
     }
