@@ -3,6 +3,7 @@
 namespace Wallo\FilamentCompanies\Concerns;
 
 use Exception;
+use Illuminate\Support\Str;
 
 trait HasName
 {
@@ -19,11 +20,15 @@ trait HasName
     {
         if (blank($this->name)) {
             $namespace = collect(explode('.', str_replace(['/', '\\'], '.', config('livewire.class_namespace'))))
-                ->map([Str::class, 'kebab'])
+                ->map(function(string $name) {
+                    return Str::of($name)->kebab();
+                })
                 ->implode('.');
 
             $fullName = collect(explode('.', str_replace(['/', '\\'], '.', static::class)))
-                ->map([Str::class, 'kebab'])
+                ->map(function(string $name) {
+                    return Str::of($name)->kebab();
+                })
                 ->implode('.');
 
             if (str($fullName)->startsWith($namespace)) {

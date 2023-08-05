@@ -1,4 +1,4 @@
-<x-filament::page>
+<x-filament-panels::page>
     <div>
         {{ $this->table }}
 
@@ -27,4 +27,4 @@
             </x-slot>
         </x-filament-companies::dialog-modal>
     </div>
-</x-filament::page>
+</x-filament-panels::page>

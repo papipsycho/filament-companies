@@ -1,4 +1,4 @@
-<x-filament::page>
+<x-filament-panels::page>
     @if (Laravel\Fortify\Features::canUpdateProfileInformation())
         @livewire(Wallo\FilamentCompanies\Http\Livewire\UpdateProfileInformationForm::class)
         <x-filament-companies::section-border />
@@ -30,4 +30,4 @@
         <x-filament-companies::section-border />
         @livewire(Wallo\FilamentCompanies\Http\Livewire\DeleteUserForm::class)
     @endif
-</x-filament::page>
+</x-filament-panels::page>
