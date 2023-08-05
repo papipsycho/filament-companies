@@ -41,7 +41,7 @@ class APITokens extends Page implements Tables\Contracts\HasTable
 
     protected static bool $shouldRegisterNavigation = false;
 
-    protected function getTitle(): string
+    public function getTitle(): string
     {
         return __('filament-companies::default.grid_section_titles.create_api_token');
     }
