@@ -35,22 +35,22 @@ class FilamentCompaniesServiceProvider extends ServiceProvider
 
         $this->app->afterResolving(BladeCompiler::class, static function () {
             if (class_exists(Livewire::class) && config('filament-companies.stack') === 'filament') {
-                Livewire::component(UpdateProfileInformationForm::getName(), UpdateProfileInformationForm::class);
-                Livewire::component(UpdatePasswordForm::getName(), UpdatePasswordForm::class);
-                Livewire::component(TwoFactorAuthenticationForm::getName(), TwoFactorAuthenticationForm::class);
-                Livewire::component(LogoutOtherBrowserSessionsForm::getName(), LogoutOtherBrowserSessionsForm::class);
-                Livewire::component(DeleteUserForm::getName(), DeleteUserForm::class);
+                Livewire::component((new UpdateProfileInformationForm())->getName(), UpdateProfileInformationForm::class);
+                Livewire::component((new UpdatePasswordForm())->getName(), UpdatePasswordForm::class);
+                Livewire::component((new TwoFactorAuthenticationForm())->getName(), TwoFactorAuthenticationForm::class);
+                Livewire::component((new LogoutOtherBrowserSessionsForm())->getName(), LogoutOtherBrowserSessionsForm::class);
+                Livewire::component((new DeleteUserForm())->getName(), DeleteUserForm::class);
 
                 if (Features::hasCompanyFeatures()) {
-                    Livewire::component(CreateCompanyForm::getName(), CreateCompanyForm::class);
-                    Livewire::component(UpdateCompanyNameForm::getName(), UpdateCompanyNameForm::class);
-                    Livewire::component(CompanyEmployeeManager::getName(), CompanyEmployeeManager::class);
-                    Livewire::component(DeleteCompanyForm::getName(), DeleteCompanyForm::class);
+                    Livewire::component((new CreateCompanyForm())->getName(), CreateCompanyForm::class);
+                    Livewire::component((new UpdateCompanyNameForm())->getName(), UpdateCompanyNameForm::class);
+                    Livewire::component((new CompanyEmployeeManager())->getName(), CompanyEmployeeManager::class);
+                    Livewire::component((new DeleteCompanyForm())->getName(), DeleteCompanyForm::class);
                 }
 
                 if (Features::hasSocialiteFeatures()) {
-                    Livewire::component(SetPasswordForm::getName(), SetPasswordForm::class);
-                    Livewire::component(ConnectedAccountsForm::getName(), ConnectedAccountsForm::class);
+                    Livewire::component((new SetPasswordForm())->getName(), SetPasswordForm::class);
+                    Livewire::component((new ConnectedAccountsForm())->getName(), ConnectedAccountsForm::class);
                 }
             }
         });
