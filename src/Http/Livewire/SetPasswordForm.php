@@ -8,9 +8,11 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Wallo\FilamentCompanies\Contracts\SetsUserPasswords;
+use Wallo\FilamentCompanies\Concerns\HasName;
 
 class SetPasswordForm extends Component
 {
+    use HasName;
     /**
      * The component's state.
      *

@@ -12,10 +12,11 @@ use Laravel\Fortify\Actions\GenerateNewRecoveryCodes;
 use Laravel\Fortify\Features;
 use Livewire\Component;
 use Wallo\FilamentCompanies\ConfirmsPasswords;
+use Wallo\FilamentCompanies\Concerns\HasName;
 
 class TwoFactorAuthenticationForm extends Component
 {
-    use ConfirmsPasswords;
+    use ConfirmsPasswords, HasName;
 
     /**
      * Indicates if two-factor authentication QR code is being displayed.

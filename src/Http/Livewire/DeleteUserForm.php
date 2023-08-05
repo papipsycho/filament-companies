@@ -11,9 +11,11 @@ use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 use Livewire\Redirector;
 use Wallo\FilamentCompanies\Contracts\DeletesUsers;
+use Wallo\FilamentCompanies\Concerns\HasName;
 
 class DeleteUserForm extends Component
 {
+    use HasName;
     /**
      * Indicates if user deletion is being confirmed.
      */

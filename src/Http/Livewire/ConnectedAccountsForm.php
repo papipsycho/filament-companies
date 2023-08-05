@@ -14,9 +14,11 @@ use Livewire\Redirector;
 use Wallo\FilamentCompanies\ConnectedAccount;
 use Wallo\FilamentCompanies\Pages\User\Profile;
 use Wallo\FilamentCompanies\Socialite;
+use Wallo\FilamentCompanies\Concerns\HasName;
 
 class ConnectedAccountsForm extends Component
 {
+    use HasName;
     /**
      * Indicates whether removal of a provider is being confirmed.
      */

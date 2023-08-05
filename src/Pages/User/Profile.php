@@ -3,9 +3,12 @@
 namespace Wallo\FilamentCompanies\Pages\User;
 
 use Filament\Pages\Page;
+use Wallo\FilamentCompanies\Concerns\HasName;
 
 class Profile extends Page
 {
+    use HasName;
+
     protected static string $view = 'filament-companies::filament.pages.user.profile';
 
     protected static bool $shouldRegisterNavigation = false;

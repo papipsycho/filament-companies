@@ -6,9 +6,11 @@ use Filament\Pages\Page;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Wallo\FilamentCompanies\FilamentCompanies;
+use Wallo\FilamentCompanies\Concerns\HasName;
 
 class CompanySettings extends Page
 {
+    use HasName;
     public mixed $company;
 
     protected static string $view = 'filament-companies::filament.pages.companies.company_settings';

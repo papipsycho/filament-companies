@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Wallo\FilamentCompanies\Contracts\CreatesCompanies;
 use Wallo\FilamentCompanies\RedirectsActions;
+use Wallo\FilamentCompanies\Concerns\HasName;
 
 class CreateCompanyForm extends Component
 {
-    use RedirectsActions;
+    use RedirectsActions, HasName;
 
     /**
      * The component's state.

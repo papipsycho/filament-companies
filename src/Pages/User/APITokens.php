@@ -22,10 +22,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\HtmlString;
 use Laravel\Sanctum\Sanctum;
 use Wallo\FilamentCompanies\FilamentCompanies;
+use Wallo\FilamentCompanies\Concerns\HasName;
 
 class APITokens extends Page implements Tables\Contracts\HasTable
 {
-    use Tables\Concerns\InteractsWithTable;
+    use Tables\Concerns\InteractsWithTable, HasName;
 
     /**
      * The plain text token value.

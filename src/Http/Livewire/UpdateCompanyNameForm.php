@@ -9,10 +9,11 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Wallo\FilamentCompanies\Contracts\UpdatesCompanyNames;
 use Wallo\FilamentCompanies\RefreshesNavigationMenu;
+use Wallo\FilamentCompanies\Concerns\HasName;
 
 class UpdateCompanyNameForm extends Component
 {
-    use RefreshesNavigationMenu;
+    use RefreshesNavigationMenu, HasName;
 
     /**
      * The company instance.

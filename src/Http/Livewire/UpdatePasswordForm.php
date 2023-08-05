@@ -8,9 +8,11 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Fortify\Contracts\UpdatesUserPasswords;
 use Livewire\Component;
+use Wallo\FilamentCompanies\Concerns\HasName;
 
 class UpdatePasswordForm extends Component
 {
+    use HasName;
     /**
      * The component's state.
      *

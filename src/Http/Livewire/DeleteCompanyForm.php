@@ -13,10 +13,11 @@ use Livewire\Component;
 use Wallo\FilamentCompanies\Actions\ValidateCompanyDeletion;
 use Wallo\FilamentCompanies\Contracts\DeletesCompanies;
 use Wallo\FilamentCompanies\RedirectsActions;
+use Wallo\FilamentCompanies\Concerns\HasName;
 
 class DeleteCompanyForm extends Component
 {
-    use RedirectsActions;
+    use RedirectsActions, HasName;
 
     /**
      * The company instance.

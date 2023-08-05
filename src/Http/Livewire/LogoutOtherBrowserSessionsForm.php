@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
+use Wallo\FilamentCompanies\Concerns\HasName;
 
 class LogoutOtherBrowserSessionsForm extends Component
 {
+    use HasName;
     /**
      * Indicates if logout is being confirmed.
      */
